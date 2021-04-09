@@ -4,24 +4,13 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="Pages.Login">
+      <class name="com.qa.lumen.main.failingtest">
         <methods>
-          <include name="loginPageTitleTest"/>
-          <include name="extent"/>
           <include name="Start_initialization"/>
+          <include name="failtest"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- Pages.Login -->
+      </class> <!-- com.qa.lumen.main.failingtest -->
     </classes>
   </test> <!-- Test(failed) -->
-  <test thread-count="5" name="Test in firefox(failed)">
-    <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="Pages.Loginpageexcel">
-        <methods>
-          <include name="TestSetup"/>
-          <include name="datadrivernlogin"/>
-        </methods>
-      </class> <!-- Pages.Loginpageexcel -->
-    </classes>
-  </test> <!-- Test in firefox(failed) -->
 </suite> <!-- Failed suite [Suite] -->

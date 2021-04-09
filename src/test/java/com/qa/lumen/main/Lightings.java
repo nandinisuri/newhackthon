@@ -21,6 +21,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -30,6 +31,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import Pages.Login;
 import Pages.SIGNOUT;
+@Listeners(listeners.TestListener.class)
 
 public class Lightings extends Basepage {; 
 	public Lightings() throws IOException {
@@ -80,11 +82,11 @@ public class Lightings extends Basepage {;
 		  //...Action class..//
 
      Actions a2 = new Actions(driver);
-	 a2.moveToElement(driver.findElement(By.xpath(" //span[@title='fans']"))).perform();
+	 a2.moveToElement(driver.findElement(By.xpath("//span[@title='fans']"))).perform();
 	 Reporter.log("fans ",true);	
 			  
      Actions a3 = new Actions(driver);
-	 a3.moveToElement(driver.findElement(By.xpath(" //span[@title='rooms']"))).perform();
+	 a3.moveToElement(driver.findElement(By.xpath("//*[@id=\"nav-tab-05\"]/a/span[1]/text()"))).perform();
 	 Reporter.log("rooms",true); 
 		     
 

@@ -48,7 +48,7 @@ public void OpenBrowser(String browser) {
 
         else if(browser.equals("firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver","\"E:\\seleniumFiles\\Drivers");
+			System.setProperty("webdriver.gecko.driver","E:\\seleniumFiles\\Drivers\\geckodriver.exe");
 			
 			  driver =new FirefoxDriver();
 		}

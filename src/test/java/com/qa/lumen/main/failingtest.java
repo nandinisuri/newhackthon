@@ -42,12 +42,12 @@ public class failingtest extends Basepage{
 		//
 		OpenBrowser(browser);
 		//
-		GetURL(config.getProperty("URL"));
+		GetURL(config.getProperty("URL")); 
 	}
 		
 		@Test
-		public void Addproduct() throws IOException, InterruptedException {
-			 Reporter.log("Addproduct",true);
+		public void failtest() throws IOException, InterruptedException {
+			 Reporter.log("failtest",true);
     	//.....EXTENT REPORTS.....//
 		 ExtentReports ex = new ExtentReports(System.getProperty("user.dir")+"/test-output5/addproductnewReport.html");
 		  ExtentTest test =ex.startTest("Addproduct");
@@ -61,14 +61,17 @@ public class failingtest extends Basepage{
 	      WebElement ele = driver.findElement(By.xpath("//b[text()='Shop Ceiling Lights']"));
 		  System.out.println("The header text is - " +ele.getText());
 					
-
-		   Actions a2 = new Actions(driver);
-		   a2.moveToElement(driver.findElement(By.xpath(" //span[@title='fans']"))).perform();
-		   Reporter.log("fans ",true);
+		 WebDriverWait wait=new WebDriverWait(driver, 0);
+		  WebElement Rooms;
+		  Rooms= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath( "//*[@id=\\\\\\\"nav-tab-05\\\\\\\"]/a/span[1]/text()")));
+		  Rooms.click();
+		 Reporter.log("Rooms",true);
+		  
+		   //....incorrect xpath...//
 		 			       
-		   Actions a3 = new Actions(driver);
-		   a3.moveToElement(driver.findElement(By.xpath(" //span[@title='room']"))).perform();
-		   Reporter.log("rooms",true); 
+		  // Actions a3 = new Actions(driver);
+		 //  a3.moveToElement(driver.findElement(By.xpath("//*[@id=\\\"nav-tab-05\\\"]/a/span[1]/text()"))).perform();
+		 //  Reporter.log("rooms",true); 
 			 
 			 test.log(LogStatus.FAIL, "TEST Failed");
 

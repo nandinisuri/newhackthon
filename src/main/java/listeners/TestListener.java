@@ -14,44 +14,41 @@ import org.testng.ITestResult;
 
 public class TestListener implements ITestListener {
 	@Override
-	 public void onFinish(ITestContext arg0) {
-	  // TODO Auto-generated method stub
+	 public void onFinish(ITestContext result) {
+		
+		
 	  
 	 }
 
 	 @Override
-	 public void onStart(ITestContext arg0) {
-	  // TODO Auto-generated method stub
+	 public void onStart(ITestContext result) {
+	 System.out.println("Test onstart and details "+result.getName());
+
+ 
+	 }
+
+	 @Override
+	 public void onTestFailure(ITestResult result) {
+	 System.out.println("Test Failed and details "+result.getName());
 	  
 	 }
 
 	 @Override
-	 public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
-	  // TODO Auto-generated method stub
+	 public void onTestSkipped(ITestResult result) {
+	System.out.println("Test Skipped and details "+result.getName());
+
+	 }
+
+	 @Override
+	 public void onTestStart(ITestResult result) {
+	 System.out.println("Test Start and details "+result.getName());
+
 	  
 	 }
 
 	 @Override
-	 public void onTestFailure(ITestResult arg0) {
-	  // TODO Auto-generated method stub
-	  
-	 }
-
-	 @Override
-	 public void onTestSkipped(ITestResult arg0) {
-	  // TODO Auto-generated method stub
-	  
-	 }
-
-	 @Override
-	 public void onTestStart(ITestResult arg0) {
-	  // TODO Auto-generated method stub
-	  
-	 }
-
-	 @Override
-	 public void onTestSuccess(ITestResult arg0) {
-	  // TODO Auto-generated method stub
+	 public void onTestSuccess(ITestResult result) {
+	 System.out.println("Test passed and details "+result.getName());
 	  
 	 }
 
